@@ -17,3 +17,20 @@ jobs:
         run: npm run lint
       - name: Check format 💅
         run: npx prettier --check .
+
+  unit-test:
+    name: Run unit and integration tests
+    runs-on: ubuntu-latest
+    needs: [lint]
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+      - name: Install dependencies 📦
+        uses: bahmutov/npm-install@v1
+      - name: Run unit tests 🧪
+        run: npm t -- --coverage --runInBand
+      - name: Upload code coverage ⬆️
+        uses: actions/upload-artifact@v2
+        with:
+          name: unit-coverage
+          path: coverage
