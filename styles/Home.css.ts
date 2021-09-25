@@ -1,6 +1,6 @@
-import { style, globalStyle } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css';
 
-import { vars } from './vars.css'
+import { vars } from './vars.css';
 
 export const container = style({
   minHeight: '100vh',
@@ -9,7 +9,7 @@ export const container = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-})
+});
 
 export const main = style({
   padding: '5rem 0',
@@ -18,7 +18,7 @@ export const main = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-})
+});
 
 export const footer = style({
   width: '100%',
@@ -27,19 +27,19 @@ export const footer = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-})
+});
 globalStyle(`${footer} img`, {
   marginLeft: '0.5rem',
-})
+});
 globalStyle(`${footer} a`, {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-})
+});
 
 const centerText = style({
   textAlign: 'center',
-})
+});
 
 export const title = style([
   {
@@ -48,14 +48,14 @@ export const title = style([
     fontSize: '4rem',
   },
   centerText,
-])
+]);
 globalStyle(`${title} a`, {
   color: vars.colors.main,
   textDecoration: 'none',
-})
+});
 globalStyle(`${title} a:hover, ${title} a:focus, ${title} a:active`, {
   textDecoration: 'underline',
-})
+});
 
 export const description = style([
   {
@@ -63,7 +63,7 @@ export const description = style([
     fontSize: '1.5rem',
   },
   centerText,
-])
+]);
 
 export const code = style({
   background: '#fafafa',
@@ -71,7 +71,7 @@ export const code = style({
   padding: '0.75rem',
   fontSize: '1.1rem',
   fontFamily: vars.fonts.code,
-})
+});
 
 export const grid = style({
   display: 'flex',
@@ -87,7 +87,7 @@ export const grid = style({
       flexDirection: 'column',
     },
   },
-})
+});
 
 export const card = style({
   margin: '1rem',
@@ -106,17 +106,17 @@ export const card = style({
       borderColor: vars.colors.main,
     },
   },
-})
+});
 globalStyle(`${card} h3`, {
   margin: '0 0 1rem 0',
   fontSize: '1.5rem',
-})
+});
 globalStyle(`${card} p`, {
   margin: 0,
   fontSize: '1.25rem',
   lineHeight: 1.5,
-})
+});
 
 export const logo = style({
   height: '1em',
-})
+});
