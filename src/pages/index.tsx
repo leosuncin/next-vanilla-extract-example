@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import * as styles from '../styles/Home.css';
+import * as styles from '@/styles/Home.css';
 
 const Home: NextPage = () => {
   return (

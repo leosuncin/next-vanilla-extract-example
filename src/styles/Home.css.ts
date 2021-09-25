@@ -1,6 +1,6 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
-import { vars } from './vars.css';
+import { vars } from '@/styles/vars.css';
 
 export const container = style({
   minHeight: '100vh',
