@@ -1,0 +1,19 @@
+name: Continuos Integration
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    name: Lint source code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+      - name: Install dependencies 📦
+        uses: bahmutov/npm-install@v1
+      - name: Check types 🧩
+        run: npm run type-check
+      - name: Lint 🧹
+        run: npm run lint
+      - name: Check format 💅
+        run: npx prettier --check .
