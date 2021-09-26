@@ -38,3 +38,86 @@ export const vars = createGlobalTheme(':root', {
     accent: '#2ebaae',
   },
 });
+
+const resolution: Record<string, [number | null, number]> = {
+  xlarge: [1281, 1680],
+  large: [981, 1280],
+  medium: [737, 980],
+  small: [481, 736],
+  xsmall: [null, 480],
+};
+
+type Operator = '>=' | '<=' | '>' | '<' | '!';
+
+type Resolution = keyof typeof resolution;
+
+export function getBreakpoint(
+  query: `${Operator} ${Resolution}` | Resolution,
+): string {
+  let [operator, size] = query.split(' ') as [Operator | undefined, Resolution];
+
+  if (!size) {
+    size = operator as Resolution;
+    operator = undefined;
+  }
+  const [min, max] = resolution[size];
+
+  // Max only
+  if (min == null) {
+    if (operator === '>=') {
+      return 'screen';
+    }
+
+    if (operator === '>' || operator === '!') {
+      return `screen and (min-width: ${max + 1}px)`;
+    }
+
+    if (operator === '<') {
+      throw new Error('Invalid');
+    }
+
+    return `screen and (max-width: ${max}px)`;
+  }
+
+  // Min only
+  if (max == null) {
+    if (operator === '>') {
+      throw new Error('Invalid');
+    }
+
+    if (operator === '<' || operator === '!') {
+      return `screen and (max-width: ${min - 1}px)`;
+    }
+
+    if (operator === '<=') {
+      return 'screen';
+    }
+
+    return `screen and (min-width: ${min}px)`;
+  }
+
+  // Min and max
+  if (operator === '>=') {
+    return `screen and (min-width: ${min}px)`;
+  }
+
+  if (operator === '<=') {
+    return `screen and (max-width: ${max}px)`;
+  }
+
+  if (operator === '>') {
+    return `screen and (min-width: ${max + 1})`;
+  }
+
+  if (operator === '<') {
+    return `screen and (max-width: ${min - 1})`;
+  }
+
+  if (operator === '!') {
+    return `screen and (max-width: ${min - 1}), screen and (min-width: ${
+      max + 1
+    })`;
+  }
+
+  return `screen and (min-width: ${min}px) and (max-width: ${max}px)`;
+}
