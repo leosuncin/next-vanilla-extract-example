@@ -1,7 +1,13 @@
 import type { NextPage } from 'next';
 
+import Wrapper from '@/components/layout/Wrapper';
+
 const Home: NextPage = () => {
-  return <h1>Home</h1>;
+  return (
+    <Wrapper>
+      <h1>Home</h1>
+    </Wrapper>
+  );
 };
 
 export default Home;
