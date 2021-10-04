@@ -13,7 +13,7 @@
     "type-check": "tsc --noEmit --noErrorTruncation --pretty false --incremental false"
   },
   "dependencies": {
-    "@vanilla-extract/babel-plugin": "1.1.0",
+    "@vanilla-extract/babel-plugin": "1.1.1",
     "@vanilla-extract/css": "1.6.1",
     "@vanilla-extract/next-plugin": "1.0.0",
     "next": "11.1.2",
