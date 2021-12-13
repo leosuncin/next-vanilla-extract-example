@@ -1,8 +1,7 @@
+// Optional: configure or set up a testing framework before each test.
+// If you delete this file, remove `setupFilesAfterEnv` from `jest.config.js`
+
+// Used for __tests__/testing-library.js
+// Learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 import '@vanilla-extract/css/disableRuntimeStyles';
-
-import { loadEnvConfig } from '@next/env';
-
-loadEnvConfig(__dirname, true, { info: () => null, error: console.error });
-// @ts-expect-error Monkey patch
-globalThis.__NEXT_DATA__ = {};

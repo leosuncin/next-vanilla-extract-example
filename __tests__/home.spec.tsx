@@ -1,12 +1,10 @@
-import { screen } from '@testing-library/react';
-import { getPage } from 'next-page-tester';
+/** @jest-environment jsdom */
+import { render, screen } from '@testing-library/react';
+
+import HomePage from '@/pages/index';
 
 it('render the home page', async () => {
-  const { render } = await getPage({
-    route: '/',
-  });
-
-  render();
+  render(<HomePage />);
 
   expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
 });
