@@ -29,7 +29,7 @@
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
     "husky": "7.0.4",
-    "jest": "27.5.1",
+    "jest": "28.0.3",
     "lint-staged": "12.4.1",
     "next-test-api-route-handler": "3.1.2",
     "prettier": "2.6.2",
