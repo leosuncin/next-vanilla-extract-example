@@ -28,7 +28,7 @@
     "@types/react": "18.0.8",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
-    "husky": "7.0.4",
+    "husky": "8.0.0",
     "jest": "27.5.1",
     "lint-staged": "12.4.1",
     "next-test-api-route-handler": "3.1.2",
