@@ -26,7 +26,7 @@
     "@testing-library/user-event": "14.4.3",
     "@types/jest": "27.5.0",
     "@types/react": "18.0.32",
-    "eslint": "8.36.0",
+    "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "husky": "8.0.3",
     "jest": "27.5.1",
