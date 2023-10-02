@@ -27,7 +27,7 @@
     "@types/jest": "27.5.0",
     "@types/react": "18.2.21",
     "eslint": "8.50.0",
-    "eslint-config-next": "13.4.19",
+    "eslint-config-next": "13.5.3",
     "husky": "8.0.3",
     "jest": "27.5.1",
     "lint-staged": "14.0.1",
