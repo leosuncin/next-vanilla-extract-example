@@ -30,7 +30,7 @@ jobs:
       - name: Run unit tests 🧪
         run: npm t -- --coverage --runInBand
       - name: Upload code coverage ⬆️
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: unit-coverage
           path: coverage
